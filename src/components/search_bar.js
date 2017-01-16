@@ -19,7 +19,6 @@ class SearchBar extends Component {
         // Applies to the line "Value of the input" whenever you reference a javascript variable in JSX, you use curly braces.
         <div>
           <input onChange={event => this.setState({ term: event.target.value })} />
-          Value of the input: {this.state.term}
         </div>
       );
     }
