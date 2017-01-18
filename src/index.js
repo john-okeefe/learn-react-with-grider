@@ -1,9 +1,10 @@
+/* global document */
 /* lots of really good notes in search_bar.js. Check that out when you are
 writing your own React app. */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
+import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 
 const API_KEY = 'AIzaSyA90uOps8KPvpeAHRSSdb5PBvpIiGcO8g8';
@@ -13,12 +14,12 @@ considered a functional component. Changing function based componenet (check
 previous git builds) to a class based component so it can keep state of the
 YouTube Search information. */
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = { videos: [] };
 
-    YTSearch({key: API_KEY, term: 'surfboards'}, videos => {
+    YTSearch({ key: API_KEY, term: 'surfboards' }, (videos) => {
       /* Since it makes sense to call the data coming in videos, it creates an
       object where the key and value are the same. When that happens you can
       condense the object down to one mention of the word. This is used a lot in
