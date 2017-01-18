@@ -19,7 +19,7 @@ class App extends Component {
 
     this.state = { videos: [] };
 
-    YTSearch({ key: API_KEY, term: 'surfboards' }, (videos) => {
+    YTSearch({ key: API_KEY, term: 'linux' }, (videos) => {
       /* Since it makes sense to call the data coming in videos, it creates an
       object where the key and value are the same. When that happens you can
       condense the object down to one mention of the word. This is used a lot in

@@ -5,7 +5,8 @@ import VideoListItem from './video_list_item';
 It's just return a list so we'll setup the ul's. Using Bootstrap v4 for styling.
 */
 const VideoList = (props) => {
-  const videoItems = props.videos.map(video => <VideoListItem video={video} />);
+  const videoItems = props.videos.map(video => <VideoListItem key={video.etag} video={video} />);
+
   return (
     <ul className="col-md-4 list-group">
       {videoItems}
